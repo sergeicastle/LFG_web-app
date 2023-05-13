@@ -1,3 +1,10 @@
+from django.http import HttpResponseNotFound
 from django.shortcuts import render
 
-# Create your views here.
+
+def index(request, ):
+    return render(request, 'main/home.html', {'title': 'Главная страница'})
+
+
+def pageNotFound(request, exception):
+    return HttpResponseNotFound('<h1>Страница не найдена</h1>')
