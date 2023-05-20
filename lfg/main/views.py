@@ -3,7 +3,7 @@ from django.shortcuts import render
 
 
 def index(request, ):
-    return render(request, 'main/home.html', {'title': 'Главная страница'})
+    return render(request, 'main/allideas.html', {'title': 'Главная страница'})
 
 
 def pageNotFound(request, exception):
