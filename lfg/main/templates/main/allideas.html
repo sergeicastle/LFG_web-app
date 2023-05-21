@@ -2,87 +2,25 @@
 
 {% block main %}
     <section class="content">
-            <div class="row row-cols-1 row-cols-lg-2 row-cols-xxl-3 g-3">
-                <div class="col">
-                    <div class="card">
-                        <div class="card-header text-truncate">
-                            №123456
-                            <a class="rounded mx-auto float-end ps-2" href="#"><i class="fa-solid fa-ruble-sign"></i></a>
-                            <a class="rounded mx-auto float-end ps-2" href="#"><i class="fa-solid fa-heart"></i></a>
-                            <a class="rounded mx-auto float-end ps-2" href="#"><i class="fa-regular fa-circle-check"></i></a>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title text-truncate">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac fringilla dui. Proin porttitor metus a diam cursus varius. Nunc mauris ex, iaculis in vulputate ac, porta a libero. Fusce condimentum erat in turpis hendrerit aliquet.</p>
-                            <a href="#" class="card-link">Card link</a>
-                            <a href="#" class="card-link">Another link</a>
-                        </div>
+        <div class="row row-cols-1 row-cols-xxl-2 g-3">
+            {% for elem in ideas %}
+            <div class="col">
+                <div class="card">
+                    <div class="card-header text-truncate">
+                        #{{ elem.id }}
+                        <a class="rounded mx-auto float-end ps-2" href="#"><i class="fa-solid fa-ruble-sign"></i></a>
+                        <a class="rounded mx-auto float-end ps-2" href="#"><i class="fa-solid fa-heart"></i></a>
+                        <a class="rounded mx-auto float-end ps-2" href="#"><i class="fa-regular fa-circle-check"></i></a>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <div class="card-header text-truncate">
-                            №123456
-                            <a class="rounded mx-auto float-end ps-2" href="#"><i class="fa-solid fa-ruble-sign"></i></a>
-                            <a class="rounded mx-auto float-end ps-2" href="#"><i class="fa-solid fa-heart"></i></a>
-                            <a class="rounded mx-auto float-end ps-2" href="#"><i class="fa-regular fa-circle-check"></i></a>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title text-truncate">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac fringilla dui. Proin porttitor metus a diam cursus varius. Nunc mauris ex, iaculis in vulputate ac, porta a libero. Fusce condimentum erat in turpis hendrerit aliquet.</p>
-                            <a href="#" class="card-link">Card link</a>
-                            <a href="#" class="card-link">Another link</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <div class="card-header text-truncate">
-                            №123456
-                            <a class="rounded mx-auto float-end ps-2" href="#"><i class="fa-solid fa-ruble-sign"></i></a>
-                            <a class="rounded mx-auto float-end ps-2" href="#"><i class="fa-solid fa-heart"></i></a>
-                            <a class="rounded mx-auto float-end ps-2" href="#"><i class="fa-regular fa-circle-check"></i></a>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title text-truncate">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac fringilla dui. Proin porttitor metus a diam cursus varius. Nunc mauris ex, iaculis in vulputate ac, porta a libero. Fusce condimentum erat in turpis hendrerit aliquet.</p>
-                            <a href="#" class="card-link">Card link</a>
-                            <a href="#" class="card-link">Another link</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <div class="card-header text-truncate">
-                            №123456
-                            <a class="rounded mx-auto float-end ps-2" href="#"><i class="fa-solid fa-ruble-sign"></i></a>
-                            <a class="rounded mx-auto float-end ps-2" href="#"><i class="fa-solid fa-heart"></i></a>
-                            <a class="rounded mx-auto float-end ps-2" href="#"><i class="fa-regular fa-circle-check"></i></a>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title text-truncate">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac fringilla dui. Proin porttitor metus a diam cursus varius. Nunc mauris ex, iaculis in vulputate ac, porta a libero. Fusce condimentum erat in turpis hendrerit aliquet.</p>
-                            <a href="#" class="card-link">Card link</a>
-                            <a href="#" class="card-link">Another link</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <div class="card-header text-truncate">
-                            №123456
-                            <a class="rounded mx-auto float-end ps-2" href="#"><i class="fa-solid fa-ruble-sign"></i></a>
-                            <a class="rounded mx-auto float-end ps-2" href="#"><i class="fa-solid fa-heart"></i></a>
-                            <a class="rounded mx-auto float-end ps-2" href="#"><i class="fa-regular fa-circle-check"></i></a>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title text-truncate">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac fringilla dui. Proin porttitor metus a diam cursus varius. Nunc mauris ex, iaculis in vulputate ac, porta a libero. Fusce condimentum erat in turpis hendrerit aliquet.</p>
-                            <a href="#" class="card-link">Card link</a>
-                            <a href="#" class="card-link">Another link</a>
-                        </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ elem.title }}</h5>
+                        <p class="card-text">{{ elem.offer }}</p>
+                        <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
                     </div>
                 </div>
             </div>
+            {% endfor %}
+        </div>
     </section>
 {% endblock %}

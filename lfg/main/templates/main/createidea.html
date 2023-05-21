@@ -1,26 +1,28 @@
 {% extends 'main/index.html' %}
 
 {% block main %}
-        <form>
+        <form method="post">
             <div class="pt-3 ps-4 pe-5">
-                <label for="exampleFormControlTextarea0" class="form-label">Наименование идеи</label>
-                <textarea class="form-control" id="exampleFormControlTextarea0" rows="1"></textarea>
-                <label for="exampleFormControlTextarea1" class="form-label pt-3">Описание текущей ситуации (недостатки)</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                <label for="exampleFormControlTextarea2" class="form-label pt-3">Предложения по улучшению (описание инициативы)</label>
-                <textarea class="form-control" id="exampleFormControlTextarea2" rows="3"></textarea>
-                <label for="exampleFormControlTextarea3" class="form-label pt-3">Ожидаемый результат</label>
-                <textarea class="form-control" id="exampleFormControlTextarea3" rows="3"></textarea>
-                <div class="form-check pt-3">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                  <label class="form-check-label" for="flexCheckDefault">
+                {% csrf_token %}<br>
+                <label class="form-label">Наименование идеи</label>
+                {{ form.title }}<br>
+                <label class="form-label">Описание текущей ситуации (недостатки)</label>
+                {{ form.description }}<br>
+                <label class="form-label">Предложения по улучшению (описание инициативы)</label>
+                {{ form.offer }}<br>
+                <label class="form-label">Ожидаемый результат</label>
+                {{ form.effect }}<br>
+
+                <div class="form-check">
+                  {{ form.economic }}
+                  <label class="form-check-label">
                     Экономический эффект
                   </label>
                 </div>
+                <span>{{ error }}</span>
                 <div class="pt-3">
-                    <button type="submit" class="btn btn-primary">Сохранить</button>
+                    <button type="submit" class="btn btn-success">Сохранить</button>
                 </div>
             </div>
         </form>
-
 {% endblock %}
