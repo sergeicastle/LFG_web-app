@@ -1,22 +1,27 @@
 {% extends 'main/index.html' %}
 
+{% block home %}
+<a class="nav-link active" aria-current="page" href="{% url 'home' %}">Все идеи</a>
+{% endblock %}
+
+{% block create %}
+<a class="nav-link" href="{% url 'create' %}">Подать идею</a>
+{% endblock %}
+
 {% block main %}
     <section class="content">
-        <div class="row row-cols-1 row-cols-xxl-2 g-3">
+        <div class="row row-cols-1 g-3 ps-3">
             {% for elem in ideas %}
             <div class="col">
                 <div class="card">
                     <div class="card-header text-truncate">
-                        #{{ elem.id }}
-                        <a class="rounded mx-auto float-end ps-2" href="#"><i class="fa-solid fa-ruble-sign"></i></a>
-                        <a class="rounded mx-auto float-end ps-2" href="#"><i class="fa-solid fa-heart"></i></a>
-                        <a class="rounded mx-auto float-end ps-2" href="#"><i class="fa-regular fa-circle-check"></i></a>
+                        #{{ elem.id }} {{ elem.title }}
+                        {% if elem.economic %}
+                            <a class="rounded float-end"><i class="fa-solid fa-ruble-sign"></i></a>
+                        {% endif %}
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">{{ elem.title }}</h5>
                         <p class="card-text">{{ elem.offer }}</p>
-                        <a href="#" class="card-link">Card link</a>
-                        <a href="#" class="card-link">Another link</a>
                     </div>
                 </div>
             </div>

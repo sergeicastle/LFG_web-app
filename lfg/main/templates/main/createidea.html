@@ -1,9 +1,18 @@
 {% extends 'main/index.html' %}
 
+{% block home %}
+<a class="nav-link" href="{% url 'home' %}">Все идеи</a>
+{% endblock %}
+
+{% block create %}
+<a class="nav-link active" aria-current="page" href="{% url 'create' %}">Подать идею</a>
+{% endblock %}
+
 {% block main %}
+        <section class="content">
         <form method="post">
-            <div class="pt-3 ps-4 pe-5">
-                {% csrf_token %}<br>
+            <div class="pt-.5 ps-3">
+                {% csrf_token %}
                 <label class="form-label">Наименование идеи</label>
                 {{ form.title }}<br>
                 <label class="form-label">Описание текущей ситуации (недостатки)</label>
@@ -25,4 +34,5 @@
                 </div>
             </div>
         </form>
+        </section>
 {% endblock %}

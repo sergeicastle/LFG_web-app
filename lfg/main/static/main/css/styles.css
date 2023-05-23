@@ -21,6 +21,10 @@ section {
     padding: 15px 15px;
 }
 
+.content {
+    padding-right: 200px;
+}
+
 a {
     color: #111;
 }
