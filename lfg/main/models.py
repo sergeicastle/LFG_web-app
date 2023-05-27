@@ -1,5 +1,6 @@
 from datetime import datetime
 from django.db import models
+from django.urls import reverse
 
 
 # Create your models here.
@@ -17,3 +18,6 @@ class Ideas(models.Model):
     class Meta:
         verbose_name = 'Идея'
         verbose_name_plural = 'Идеи'
+
+    def get_absolute_url(self):
+        return reverse('post', kwargs={'post_id': self.pk})

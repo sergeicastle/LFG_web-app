@@ -1,5 +1,5 @@
 from django.http import HttpResponseNotFound
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Ideas
 from .forms import IdeasForm
 
@@ -32,3 +32,15 @@ def createidea(request):
 
 def pageNotFound(request, exception):
     return HttpResponseNotFound('<h1>Страница не найдена</h1>')
+
+
+def show_post(request, post_id):
+    post = get_object_or_404(Ideas, pk=post_id)
+
+    context = {
+        'post': post,
+        'title': post.title,
+    }
+
+    return render(request, 'main/post.html', context=context)
+

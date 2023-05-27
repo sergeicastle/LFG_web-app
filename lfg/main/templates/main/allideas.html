@@ -14,11 +14,11 @@
             {% for elem in ideas %}
             <div class="col">
                 <div class="card">
-                    <div class="card-header text-truncate">
-                        #{{ elem.id }} {{ elem.title }}
+                    <div class="card-header">
                         {% if elem.economic %}
-                            <a class="rounded float-end"><i class="fa-solid fa-ruble-sign"></i></a>
+                         <a class="rounded float-end"><i class="fa-solid fa-ruble-sign"></i></a>
                         {% endif %}
+                        <a class="nav-link text-truncate" href="{{ elem.get_absolute_url }}">#{{ elem.id }} {{ elem.title }}</a>
                     </div>
                     <div class="card-body">
                         <p class="card-text">{{ elem.offer }}</p>

@@ -1,0 +1,41 @@
+{% extends 'main/index.html' %}
+
+{% block home %}
+<a class="nav-link" href="{% url 'home' %}">Все идеи</a>
+{% endblock %}
+
+{% block create %}
+<a class="nav-link" href="{% url 'create' %}">Подать идею</a>
+{% endblock %}
+
+{% block main %}
+        <section class="content">
+        <form method="post">
+            <div class="pt-.5 ps-3">
+                {% csrf_token %}
+                <label class="form-label">Наименование идеи</label>
+                <textarea class="form-control" rows="1" disabled>{{post.title}}</textarea>
+                <label class="form-label pt-4">Описание текущей ситуации (недостатки)</label>
+                <textarea class="form-control" rows="3" disabled>{{post.description}}</textarea>
+                <label class="form-label pt-4">Предложения по улучшению (описание инициативы)</label>
+                <textarea class="form-control" rows="3" disabled>{{post.offer}}</textarea>
+                <label class="form-label pt-4">Ожидаемый результат</label>
+                <textarea class="form-control" rows="3" disabled>{{post.effect}}</textarea>
+                <div class="form-check pt-4">
+                {% if post.economic %}
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedDisabled" checked disabled>
+                      <label class="form-check-label" for="flexCheckCheckedDisabled">
+                        Экономический эффект
+                      </label>
+                {% else %}
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled" disabled>
+                      <label class="form-check-label" for="flexCheckDisabled">
+                        Экономический эффект
+                      </label>
+                {% endif %}
+                 </div>
+                <span>{{ error }}</span>
+            </div>
+        </form>
+        </section>
+{% endblock %}
