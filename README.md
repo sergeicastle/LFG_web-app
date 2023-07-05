@@ -1,4 +1,4 @@
-<img src="https://img.shields.io/badge/Engine-Python%203.11%20-blue" alt="Python Version"> <img src="https://img.shields.io/badge/Engine-Django%204.2.1-blue" alt="Django Version">
+<img src="https://img.shields.io/badge/Engine-Python%203.11%20-blue" alt="Python Version"> <img src="https://img.shields.io/badge/Engine-Django%204.2.1-blue" alt="Django Version"> <img src="https://img.shields.io/badge/Engine-PostgreSQL%2015.2%20-blue" alt="PostgreSQL Version">
 
 ## About
 
